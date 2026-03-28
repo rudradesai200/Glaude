@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./board": "./src/board.ts",
+    "./moves": "./src/moves.ts",
+    "./types": "./src/types.ts"
   },
   "scripts": {
     "test": "vitest run",

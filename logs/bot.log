@@ -1,0 +1,146 @@
+Recovered 1 active session(s) from database.
+Glaude WS server listening on ws://localhost:3001
+Glaude API server listening on http://localhost:3002
+Glaude bot ready — logged in as Glaude#7497
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] forfeit — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] connection closed
+[ws] connection closed
+[ws] room empty — scheduling auto-forfeit for 753922918668566530 in 30000ms
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] reconnect — cancelled auto-forfeit timer for 753922918668566530
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] move — channelId: 753922918668566530 userId: 702254215455572069
+[ws] forfeit — channelId: 753922918668566530 userId: 702254215455572069
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] connection closed
+[ws] connection closed
+[ws] room empty — scheduling auto-forfeit for 753922918668566530 in 30000ms
+[ws] new connection
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] reconnect — cancelled auto-forfeit timer for 753922918668566530
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] forfeit — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] forfeit — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] forfeit — channelId: 753922918668566530 userId: 702254215455572069
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] forfeit — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] forfeit — channelId: 753922918668566530 userId: 702254215455572069
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] connection closed
+[ws] new connection
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING
+[ws] forfeit — channelId: 753922918668566530 userId: 702254215455572069
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: PLAYING
+[ws] forfeit — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] join — channelId: 753922918668566530 userId: 1487457617772281957
+[ws] session phase: LOBBY
+[ws] join — channelId: 753922918668566530 userId: 702254215455572069
+[ws] session phase: PLAYING

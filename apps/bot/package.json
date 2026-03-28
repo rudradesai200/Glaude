@@ -4,13 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun run --watch src/index.ts",
-    "start": "bun run src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
     "test": "vitest run",
     "lint": "biome check ."
   },
   "dependencies": {
     "@glaude/discord-ui": "workspace:*",
+    "ws": "^8.18.0",
     "@glaude/engine": "workspace:*",
     "@glaude/game-abalone": "workspace:*",
     "@glaude/shared": "workspace:*",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
+    "@types/ws": "^8.5.13",
     "drizzle-kit": "^0.31.10",
     "vitest": "*"
   }
