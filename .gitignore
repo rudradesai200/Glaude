@@ -6,3 +6,5 @@ dist/
 *.db-wal
 .env
 .env.local
+__pycache__
+.venv

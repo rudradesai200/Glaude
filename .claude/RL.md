@@ -116,3 +116,11 @@ When current turn belongs to the AI seat, show a pulsing "thinking" indicator an
 - The stateToMatrix conversion and server-side board representation must agree exactly on which value represents which player
 - MCTS tree is NOT preserved between moves (stateless server); this is acceptable for the target response times
 - For ONNX migration path: document but do not implement — inference stays in Python for now
+
+
+## 4 Phases:
+
+Phase 1: Constants + Logic + Game wrapper + unit tests
+Phase 2: Neural network (ResNet)
+Phase 3: Training pipeline
+Phase 4: FastAPI server

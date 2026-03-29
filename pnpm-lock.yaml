@@ -31,7 +31,7 @@ importers:
         version: 1.9.0
       '@glaude/game-abalone':
         specifier: workspace:*
-        version: link:../../packages/games/abalone
+        version: link:../../packages/abalone
       '@glaude/shared':
         specifier: workspace:*
         version: link:../../packages/shared
@@ -60,15 +60,12 @@ importers:
 
   apps/bot:
     dependencies:
-      '@glaude/discord-ui':
-        specifier: workspace:*
-        version: link:../../packages/discord-ui
       '@glaude/engine':
         specifier: workspace:*
         version: link:../../packages/engine
       '@glaude/game-abalone':
         specifier: workspace:*
-        version: link:../../packages/games/abalone
+        version: link:../../packages/abalone
       '@glaude/shared':
         specifier: workspace:*
         version: link:../../packages/shared
@@ -84,9 +81,6 @@ importers:
       ws:
         specifier: ^8.18.0
         version: 8.20.0
-      zod:
-        specifier: ^4.3.6
-        version: 4.3.6
     devDependencies:
       '@types/better-sqlite3':
         specifier: ^7.6.13
@@ -101,14 +95,17 @@ importers:
         specifier: '*'
         version: 2.1.9(@types/node@25.5.0)
 
-  packages/discord-ui:
+  packages/abalone:
     dependencies:
+      '@glaude/engine':
+        specifier: workspace:*
+        version: link:../engine
       '@glaude/shared':
         specifier: workspace:*
         version: link:../shared
-      discord.js:
-        specifier: ^14.25.1
-        version: 14.25.1
+      '@napi-rs/canvas':
+        specifier: ^0.1.97
+        version: 0.1.97
     devDependencies:
       vitest:
         specifier: '*'
@@ -119,22 +116,6 @@ importers:
       '@glaude/shared':
         specifier: workspace:*
         version: link:../shared
-    devDependencies:
-      vitest:
-        specifier: '*'
-        version: 2.1.9(@types/node@25.5.0)
-
-  packages/games/abalone:
-    dependencies:
-      '@glaude/engine':
-        specifier: workspace:*
-        version: link:../../engine
-      '@glaude/shared':
-        specifier: workspace:*
-        version: link:../../shared
-      '@napi-rs/canvas':
-        specifier: ^0.1.97
-        version: 0.1.97
     devDependencies:
       vitest:
         specifier: '*'
@@ -1908,9 +1889,6 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.3.6:
-    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
-
 snapshots:
 
   '@babel/code-frame@7.29.0':
@@ -3306,5 +3284,3 @@ snapshots:
   yallist@3.1.1: {}
 
   zod@3.25.76: {}
-
-  zod@4.3.6: {}
