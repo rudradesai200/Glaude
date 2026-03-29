@@ -6,20 +6,6 @@ Vite + React · SVG board · `@discord/embedded-app-sdk` · TypeScript strict
 ## App Root
 `apps/activity/src/main.tsx` → `App.tsx` → `GameProvider` wraps everything
 
-## Key Files
-
-| File | Purpose |
-|------|---------|
-| `src/main.tsx` | Entry — initializes Discord SDK, renders `<App>` |
-| `src/App.tsx` | Top-level layout: `<GameProvider>` + `<BoardSVG>` + `<HUD>` + `<WinScreen>` |
-| `src/discord-sdk.ts` | Discord SDK init, auth flow, returns `SdkAuth` with `userId`, `username`, `avatarUrl`, `sessionId`, `wsUrl` |
-| `src/game-context.tsx` | React context — WebSocket connection, game state, `sendMove`, `forfeit`, `startNewGame` |
-| `src/hex-geometry.ts` | Axial→pixel math: `axialToPixel`, `hexVertices`, `directionVector`, `HEX_RADIUS`, `SVG_WIDTH`, `SVG_HEIGHT` |
-| `src/components/BoardSVG.tsx` | 61 hex `<polygon>` cells + marble `<circle>` + `<MoveArrow>` chevrons |
-| `src/components/HUD.tsx` | Turn banner, marble counts, forfeit button |
-| `src/components/WinScreen.tsx` | Fullscreen overlay on game over — crown/defeat UI + "New Game" button |
-| `src/components/InfoModal.tsx` | "How to play" modal |
-
 ## Game Context (`game-context.tsx`)
 
 Key values provided:

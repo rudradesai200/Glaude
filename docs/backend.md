@@ -6,19 +6,6 @@ Bun runtime · discord.js v14 · SQLite + Drizzle ORM · WebSocket server (`ws`)
 ## Entry Point
 `apps/bot/src/index.ts` — bootstraps DB, migrations, SessionManager, WS server, API server, Discord client
 
-## Key Files
-
-| File | Purpose |
-|------|---------|
-| `apps/bot/src/session-manager.ts` | In-memory session state + DB persistence. Methods: `autoJoin`, `makeMove`, `forfeit`, `recover` |
-| `apps/bot/src/ws-server.ts` | WebSocket server (`:3001`). Handles `join`/`move`/`forfeit` messages. Broadcasts state to room. Auto-forfeits after 30s empty room |
-| `apps/bot/src/api-server.ts` | HTTP API (`:3000`) — serves `GET /auth` for Discord activity SDK token exchange |
-| `apps/bot/src/interaction-handler.ts` | Routes Discord slash command interactions to handlers |
-| `apps/bot/src/commands/` | One file per command: `game-start`, `game-join`, `game-forfeit`, `game-status`, `game-move` |
-| `apps/bot/src/games/registry.ts` | Game registry — add a game by importing its definition + one line |
-| `apps/bot/src/db/schema.ts` | Drizzle schema: `players`, `game_sessions`, `session_players`, `move_history`, `player_stats` |
-| `apps/bot/src/db/repository.ts` | DB helpers: `ensurePlayer`, `persistLobby`, `persistPlaying`, `persistMoveAndState`, `persistEnded`, `loadActiveSessions` |
-
 ## Session Lifecycle
 `LOBBY → PLAYING → FINISHED | FORFEITED`
 
@@ -57,12 +44,3 @@ EndedSession  { phase: "FINISHED"|"FORFEITED"; seats: PlayerSeat[]; outcome: Gam
 | `@glaude/shared` | `packages/shared/` | `Result<T,E>`, `GlaudeError`, branded types (`PlayerId`, `SessionId`, `GameId`), `GamePhase`, `GameOutcome`, `PlayerSeat` |
 | `@glaude/engine` | `packages/engine/` | `GameDefinition<TState,TMove,TRenderCtx>` interface — 10 methods |
 | `@glaude/game-abalone` | `packages/games/abalone/` | Abalone implementation of `GameDefinition` |
-
-## Adding a New Game
-1. Implement `GameDefinition<TState,TMove,TRenderCtx>` in `packages/games/<name>/`
-2. Add one line to `apps/bot/src/games/registry.ts`
-
-## Dev
-```bash
-cd apps/bot && npx tsx --env-file=../../.env src/index.ts
-```
