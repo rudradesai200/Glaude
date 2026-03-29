@@ -8,3 +8,5 @@ dist/
 .env.local
 __pycache__
 .venv
+logs/
+services/alphazero/checkpoints/
