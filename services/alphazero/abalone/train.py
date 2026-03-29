@@ -16,13 +16,13 @@ log = logging.getLogger(__name__)
 coloredlogs.install(level="INFO")
 
 args = dotdict({
-    "numIters": 1000,
-    "numEps": 100,
+    "numIters": 50,
+    "numEps": 50,
     "tempThreshold": 15,
     "updateThreshold": 0.6,
     "maxlenOfQueue": 200000,
-    "numMCTSSims": 25,
-    "arenaCompare": 40,
+    "numMCTSSims": 15,
+    "arenaCompare": 20,
     "cpuct": 1,
     "checkpoint": "./checkpoints/",
     "load_model": False,
