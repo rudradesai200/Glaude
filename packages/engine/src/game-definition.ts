@@ -14,6 +14,20 @@ export interface GameDefinition<TState, TMove, TRenderContext> {
   currentTurn(state: TState): PlayerId;
   outcome(state: TState): GameOutcome | null;
 
+  /**
+   * Returns a player-specific masked view of the state.
+   * When defined, the WS server sends each player their own view instead of
+   * a shared broadcast. Optional — falls back to serializeState if absent.
+   */
+  buildPlayerView?(state: TState, playerId: PlayerId, seats: readonly PlayerSeat[]): unknown;
+
+  /**
+   * Returns the set of players who must respond in the current phase.
+   * When defined, the WS server uses this for move authorization instead of
+   * falling back to [currentTurn]. Optional.
+   */
+  activeRespondents?(state: TState): readonly PlayerId[];
+
   buildRenderContext(state: TState, seats: readonly PlayerSeat[]): TRenderContext;
   render(ctx: TRenderContext): Promise<Uint8Array>;
 

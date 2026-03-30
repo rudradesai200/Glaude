@@ -9,6 +9,9 @@ Discord multiplayer games bot for couples/groups. Adding a game = implement one 
 - `docs/ABALONE.md` — Abalone rules, board representation, move types, rendering spec
 - `docs/KeyFiles.md` - Key files for frontend and backend
 - `docs/stubs.d.ts` - contains code stubs for the entire project
+- `docs/COUP.md` - COUP rules, summary and instructions for development.
+- `docs/coup_plan/` - Phase-wise plan of development
+
 ## Conventions
 - TS strict: `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `verbatimModuleSyntax`
 - Files: kebab-case | Types: PascalCase | Functions: camelCase | Constants: SCREAMING_SNAKE_CASE

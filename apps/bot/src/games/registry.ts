@@ -1,9 +1,11 @@
 import type { GameDefinition } from "@glaude/engine";
 import { abaloneDefinition } from "@glaude/game-abalone";
+import { coupDefinition } from "@glaude/game-coup";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const registry = new Map<string, GameDefinition<any, any, any>>([
   [abaloneDefinition.id, abaloneDefinition],
+  [coupDefinition.id, coupDefinition],
 ]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,0 +1,53 @@
+# AI_CONTEXT_SPEC_v2_COMPACT
+
+ROLE: AI_DOC_AGENT  
+MISSION: Build a layered repository context system.
+top-level directories: packages/* and apps/*
+
+## GLOBAL_RULES
+NO_CODE | HIGH_SIGNAL_LOW_NOISE | AI_OPTIMIZED | PROGRESSIVE_DISCLOSURE | NO_REDUNDANCY | TOKEN_EFFICIENT | STRUCTURED_OUTPUT_ONLY
+
+## PHASE_1: DIRECTORY_CONTEXT_BUILD
+
+FOR_EACH top-level directory:
+1. READ_ALL_FILES(dir)
+2. EXTRACT → PURPOSE | CONCEPTS | ARCHITECTURE | KEY_FILES | ENTRY_POINTS | DEPENDENCIES | NAV_HINTS
+3. WRITE → dir/CONTEXT.md
+4. RESET_CONTEXT
+
+### CONTEXT.md_SCHEMA
+```
+DIR: <name>
+PURPOSE: * <1–3 bullets>
+CONCEPTS: * <key ideas/patterns>
+ARCHITECTURE: * <component relations> * <data/control flow summary>
+KEY_FILES: * <file>: <responsibility>
+ENTRY_POINTS: * <function|class|flow>: <importance>
+DEPENDENCIES: * INTERNAL: <modules> * EXTERNAL: <libs/services>
+NAVIGATION: * SEARCH_TERMS: <keywords> * GO_DEEPER: <targets> * COMPLEXITY_ZONES: <areas>
+```
+
+CONSTRAINTS: MAX_BREVITY | NO_CODE | CRITICAL_DETAILS_ONLY  
+AFTER_EACH_DIR → CLEAR_MEMORY | NO_STATE_CARRYOVER
+
+## PHASE_2: GLOBAL_SYNTHESIS
+
+INPUT: all dir/CONTEXT.md  
+STEPS: 1. READ_ALL_CONTEXT 2. SYNTHESIZE_GLOBAL_MODEL 3. WRITE ROOT/CONTEXT.md
+
+### ROOT_CONTEXT.md_SCHEMA
+```
+REPO: <name>
+OVERVIEW: * PURPOSE: <1–2 lines> * ARCH: <summary>
+SUBSYSTEMS: * <dir>: ROLE <summary> | LINK <path/to/CONTEXT.md>
+FLOW: * DATA_FLOW: <source>→<transform>→<sink> * CONTROL_FLOW: <trigger>→<process>→<outcome>
+PATTERNS: * <pattern>: <usage>
+NAVIGATION_GUIDE: * START_POINTS: <files/dirs> * BY_TASK: <task>: <where_to_go>
+SEARCH_STRATEGY: * <intent>: <keywords/functions>
+DRILL_PATHS: * <layer>→<dir>→<file>→<symbol>
+```
+
+CONSTRAINTS: TOP_LAYER_ONLY | REFERENCE_SUBDOCS | SCHEMA_CONSISTENT | MACHINE_PARSEABLE | NO_REDUNDANCY
+
+## OUTPUT_REQUIREMENTS
+ALL_DIRS_HAVE_CONTEXT.md | ONE_ROOT_CONTEXT.md | CONSISTENT_SCHEMA | HIGH_SIGNAL_LOW_NOISE | MINIMAL_PROSE

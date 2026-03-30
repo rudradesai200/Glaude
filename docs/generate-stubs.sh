@@ -7,10 +7,10 @@ TMPDIR=/tmp/glaude-stubs
 rm -rf "$TMPDIR"
 
 packages=(
+  "packages/coup/:packages_games_coup"
   "packages/shared:packages_shared"
   "packages/engine:packages_engine"
-  "packages/games/abalone:packages_games_abalone"
-  "packages/discord-ui:packages_discord-ui"
+  "packages/abalone:packages_games_abalone"
   "apps/bot:apps_bot"
   "apps/activity:apps_activity"
 )

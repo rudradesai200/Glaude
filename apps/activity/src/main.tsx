@@ -14,7 +14,7 @@ try {
 } catch (err) {
   console.error("[discord-sdk] init failed:", err);
   // Fall back to anonymous local play so the screen isn't blank.
-  auth = { userId: "player1", sessionId: null };
+  auth = { userId: "player1", sessionId: null, gameId: "abalone" };
 }
 
 createRoot(root).render(

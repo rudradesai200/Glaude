@@ -1,0 +1,20 @@
+{
+  "name": "@glaude/game-coup",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "lint": "biome check ."
+  },
+  "dependencies": {
+    "@glaude/engine": "workspace:*",
+    "@glaude/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "*"
+  }
+}

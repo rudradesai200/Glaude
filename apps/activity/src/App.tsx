@@ -3,8 +3,10 @@ import { GameProvider, useGame } from "./game-context.js";
 import { BoardSVG } from "./components/BoardSVG.js";
 import { HUD } from "./components/HUD.js";
 import { WinScreen } from "./components/WinScreen.js";
+import { CoupProvider } from "./coup/coup-context.js";
+import { CoupGame } from "./coup/CoupGame.js";
 
-function GameView() {
+function AbaloneView() {
   const { gameOver } = useGame();
   return (
     <div
@@ -25,9 +27,17 @@ function GameView() {
 }
 
 export function App({ auth }: { auth: SdkAuth }) {
+  if (auth.gameId === "coup") {
+    return (
+      <CoupProvider auth={auth}>
+        <CoupGame />
+      </CoupProvider>
+    );
+  }
+
   return (
     <GameProvider auth={auth}>
-      <GameView />
+      <AbaloneView />
     </GameProvider>
   );
 }

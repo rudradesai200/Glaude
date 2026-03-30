@@ -6,6 +6,7 @@ export type SdkAuth = {
   avatarUrl: string | null;
   sessionId: string | null;
   wsUrl?: string;
+  gameId: string;
 };
 
 let _sdk: DiscordSDK | DiscordSDKMock | null = null;
@@ -14,6 +15,7 @@ export async function initDiscordSdk(): Promise<SdkAuth> {
   const clientId = import.meta.env["VITE_DISCORD_CLIENT_ID"];
   const params = new URLSearchParams(window.location.search);
   const sessionId = params.get("sessionId");
+  const gameId = params.get("gameId") ?? "abalone";
 
   // Outside the Discord iframe (no frame_id param) — fall back to query-string.
   const insideDiscord = params.has("frame_id");
@@ -24,6 +26,7 @@ export async function initDiscordSdk(): Promise<SdkAuth> {
       username: userId,
       avatarUrl: null,
       sessionId,
+      gameId,
     };
   }
 
@@ -67,6 +70,7 @@ export async function initDiscordSdk(): Promise<SdkAuth> {
     avatarUrl,
     sessionId: channelId ?? null,
     wsUrl: channelId ? `wss://${window.location.host}/ws` : undefined,
+    gameId,
   };
   console.log("[discord-sdk] auth result:", result);
   return result;
