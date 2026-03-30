@@ -10,3 +10,9 @@ __pycache__
 .venv
 logs/
 services/alphazero/checkpoints/
+
+# Lock files
+bun.lock
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
