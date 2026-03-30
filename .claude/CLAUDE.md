@@ -9,8 +9,6 @@ Discord multiplayer games bot for couples/groups. Adding a game = implement one 
 - `docs/ABALONE.md` — Abalone rules, board representation, move types, rendering spec
 - `docs/KeyFiles.md` - Key files for frontend and backend
 - `docs/stubs.d.ts` - contains code stubs for the entire project
-- `services/alphazero/TS_CONTEXT.md` - contains all relevant context on what needs to be read form the JS files.
-
 ## Conventions
 - TS strict: `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `verbatimModuleSyntax`
 - Files: kebab-case | Types: PascalCase | Functions: camelCase | Constants: SCREAMING_SNAKE_CASE
@@ -28,9 +26,4 @@ Discord multiplayer games bot for couples/groups. Adding a game = implement one 
 - After every few commands `/compact`
 
 ## Status
-Bot + activity fully functional. AI opponent integration in progress.
-- Phase 1 (Constants + Logic + Game + tests): **DONE** — `services/alphazero/abalone/`
-- Phase 2 (ResNet neural network): **DONE** — `services/alphazero/abalone/pytorch/`
-- Phase 3 (Training pipeline): **DONE** — `services/alphazero/abalone/train.py`
-- Phase 4 (FastAPI server): **DONE** — `services/alphazero/server.py`
-- Phase 5 (Bot ↔ sidecar wiring): **NEXT**
+Bot + activity fully functional. Abalone is multiplayer-only (no AI opponent).
