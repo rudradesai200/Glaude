@@ -71,6 +71,7 @@ export type CoupState = {
    * phase (AWAIT_CHALLENGE_BLOCK or AWAIT_BLOCK_CHALLENGE).
    */
   readonly responded: readonly PlayerId[];
+  readonly moveNumber: number;
 };
 
 // ─── Moves ────────────────────────────────────────────────────────────────────

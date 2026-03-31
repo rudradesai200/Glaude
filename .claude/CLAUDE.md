@@ -29,4 +29,17 @@ Discord multiplayer games bot for couples/groups. Adding a game = implement one 
 - After every few commands `/compact`
 
 ## Status
-Bot + activity fully functional. Abalone is multiplayer-only (no AI opponent).
+**Coup & Abalone**: Both games fully multiplayer-functional. Discord Activities properly integrated with OAuth2 token exchange.
+
+**Key Fixes Applied:**
+- Coup game now properly tracks `moveNumber` in game state (was missing, causing DB constraint errors)
+- Discord SDK initialization errors now visible on-screen instead of silent black screen
+- Server restart process documented with Cloudflared tunnel URL update instructions
+- Log files auto-clear on each startup for cleaner debugging
+
+## Server Management
+- Start all services: `./start-services.sh`
+- Kill services: `pkill -f "tsx.*src/index.ts"; pkill -f "vite"; pkill -f "cloudflared"`
+- After Cloudflared restart: Update Discord Developer Portal (Activities → URL Mappings with new tunnel URL)
+- Monitor logs: `tail -f logs/coup-bot.log` (logs auto-cleared on startup)
+- Reset database: `rm apps/coup-bot/glaude.db` (WARNING: deletes game sessions)

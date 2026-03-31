@@ -39,6 +39,7 @@ export function initialState(seats: readonly PlayerSeat[]): CoupState {
     deck,
     pendingAction: null,
     responded: [],
+    moveNumber: 0,
   };
 }
 

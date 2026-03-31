@@ -96,13 +96,88 @@ Every time the tunnel URL changes (on each cloudflared restart), update two fiel
 3. Have a second user: `/game join`
 4. Click the **Launch Activity** button that appears — both players should see the board and moves sync in real time
 
-### Restarting servers
+## Restarting servers
+
+### When to Restart
+
+Restart after:
+- Changes to bot code, game logic, or activity frontend
+- Cloudflared crashes or tunnel becomes unstable
+- WebSocket or database connection issues
+- Updating Discord application settings (OAuth2 redirect URLs, activity URL mappings)
+
+### Quick Restart
 
 ```bash
-# Kill everything
-pkill -f "tsx src/index.ts"; pkill -f "vite"; pkill -f "cloudflared"
+# Kill all services
+pkill -f "tsx watch src/index.ts"; pkill -f "vite"; pkill -f "cloudflared"
 
-# Then restart steps 2–4 above
+# Restart them (runs step-by-step commands)
+./start-services.sh
 ```
 
-After restarting cloudflared, repeat step 5 with the new tunnel URL.
+Or restart individual services:
+```bash
+# Kill just the bot
+pkill -f "apps/coup-bot.*tsx"
+cd apps/coup-bot && pnpm tsx watch src/index.ts 2>&1 | tee ../../logs/coup-bot.log
+
+# Kill just the activity
+pkill -f "apps/coup-activity.*vite"
+cd apps/coup-activity && pnpm vite -- --port 5174 2>&1 | tee ../../logs/coup-activity.log
+
+# Kill just the tunnel
+pkill -f cloudflared
+cd apps/coup-activity && pnpm dev 2>&1 | tee ../../logs/coup-activity.log
+```
+
+### After Cloudflared Restart
+
+Every time cloudflared restarts and gets a **new tunnel URL**, update the Discord Developer Portal immediately:
+
+1. **Activities → URL Mappings**
+   - Update the mapping: prefix `/` → your **new** tunnel URL (without `https://`)
+   - Example: if new URL is `https://abc-123.trycloudflare.com`, use `abc-123.trycloudflare.com`
+
+2. **OAuth2 → Redirects**
+   - Update: `https://<your-app-id>.discordsays.com/.proxy/`
+   - This maps to the tunnel URL internally; no change needed here unless the app ID changes
+
+3. **Test the activity**
+   - Start a new game session in Discord: `/game start coup`
+   - If you see a **black screen**, check browser console (F12) for errors
+   - Common issues:
+     - `Invalid Origin` → OAuth2 redirect URL not registered correctly
+     - `Token exchange failed: 500` → Bot is crashed or database error (check `logs/coup-bot.log`)
+     - `WebSocket connection failed` → Tunnel not running or WS server port mismatch
+
+### Database Reset
+
+If the bot crashes during database operations:
+
+```bash
+# Clear the database (WARNING: deletes all game sessions!)
+rm apps/coup-bot/glaude.db apps/abalone-bot/glaude.db
+
+# Restart the bot
+pkill -f "tsx.*src/index.ts"
+cd apps/coup-bot && pnpm tsx watch src/index.ts 2>&1 | tee ../../logs/coup-bot.log
+```
+
+### Checking Logs
+
+All logs are in `./logs/` with fresh entries on each startup:
+
+```bash
+# Monitor bot startup
+tail -f logs/coup-bot.log
+
+# Monitor activity frontend
+tail -f logs/coup-activity.log
+
+# Monitor tunnel
+tail -f logs/cloudflared-coup.log
+
+# See all errors since last restart
+grep -i "error\|fail" logs/coup-bot.log
+```
