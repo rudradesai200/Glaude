@@ -14,6 +14,7 @@ import { isOk } from "@glaude/shared";
 import type { SdkAuth } from "./discord-sdk.js";
 
 // ─── Dev fixtures ──────────────────────────────────────────────────────────────
+// Dev fixtures — used for local play. In multiplayer, actual player IDs come from Discord.
 export const BLACK_ID = PlayerId("player1");
 export const WHITE_ID = PlayerId("player2");
 

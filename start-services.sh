@@ -52,6 +52,7 @@ echo -e "${YELLOW}Starting Abalone Bot (WS: 3001, API: 3002)...${NC}"
  pnpm tsx watch src/index.ts >> "$LOG_DIR/abalone-bot.log" 2>&1) &
 ABALONE_BOT_PID=$!
 echo "Abalone Bot PID: $ABALONE_BOT_PID"
+sleep 2
 
 # ─── COUP BOT ─────────────────────────────────────────────────────────────────
 echo -e "${YELLOW}Starting Coup Bot (WS: 3003, API: 3004)...${NC}"
@@ -65,14 +66,16 @@ echo -e "${YELLOW}Starting Coup Bot (WS: 3003, API: 3004)...${NC}"
  pnpm tsx watch src/index.ts >> "$LOG_DIR/coup-bot.log" 2>&1) &
 COUP_BOT_PID=$!
 echo "Coup Bot PID: $COUP_BOT_PID"
+sleep 2
 
 # ─── ABALONE ACTIVITY ─────────────────────────────────────────────────────────
 echo -e "${YELLOW}Starting Abalone Activity (port 5173)...${NC}"
 (cd "$PROJECT_ROOT/apps/abalone-activity" && \
  VITE_DISCORD_CLIENT_ID="$ABALONE_CLIENT_ID" \
- pnpm vite >> "$LOG_DIR/abalone-activity.log" 2>&1) &
+ pnpm vite -- --port 5173 >> "$LOG_DIR/abalone-activity.log" 2>&1) &
 ABALONE_ACTIVITY_PID=$!
 echo "Abalone Activity PID: $ABALONE_ACTIVITY_PID"
+sleep 2
 
 # ─── COUP ACTIVITY ────────────────────────────────────────────────────────────
 echo -e "${YELLOW}Starting Coup Activity (port 5174)...${NC}"
@@ -81,6 +84,7 @@ echo -e "${YELLOW}Starting Coup Activity (port 5174)...${NC}"
  pnpm vite -- --port 5174 >> "$LOG_DIR/coup-activity.log" 2>&1) &
 COUP_ACTIVITY_PID=$!
 echo "Coup Activity PID: $COUP_ACTIVITY_PID"
+sleep 2
 
 # ─── CLOUDFLARED TUNNELS ──────────────────────────────────────────────────────
 # Note: Cloudflared tunnels require manual setup with cloudflare account and cert.pem

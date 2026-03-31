@@ -13,6 +13,7 @@ type SerializedState = {
   turn: PlayerId;
   capturedBy: Record<string, number>;
   moveNumber: number;
+  players?: [string, string];
 };
 
 const serializeBoard = (board: Map<string, Cell>): Record<string, Cell> =>
@@ -65,6 +66,17 @@ export const abaloneDefinition: GameDefinition<AbaloneState, AbaloneMove, Abalon
 
   render(ctx: AbaloneRenderContext): Promise<Uint8Array> {
     return renderAbalone(ctx);
+  },
+
+  buildPlayerView(state: AbaloneState, _playerId: PlayerId, seats: readonly PlayerSeat[]): unknown {
+    const players: [string, string] = [seats[0]?.playerId ?? "", seats[1]?.playerId ?? ""];
+    return {
+      board: serializeBoard(state.board),
+      turn: state.turn,
+      capturedBy: { ...state.capturedBy },
+      moveNumber: state.moveNumber,
+      players,
+    };
   },
 
   serializeState(state: AbaloneState): string {

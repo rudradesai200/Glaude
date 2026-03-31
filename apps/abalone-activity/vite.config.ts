@@ -21,10 +21,14 @@ export default defineConfig({
   server: {
     allowedHosts: true,
     proxy: {
-      "/api": "http://localhost:3002",
+      "/api": {
+        target: "http://localhost:3002",
+        changeOrigin: true,
+      },
       "/ws": {
         target: "ws://localhost:3001",
         ws: true,
+        changeOrigin: true,
       },
     },
   },
